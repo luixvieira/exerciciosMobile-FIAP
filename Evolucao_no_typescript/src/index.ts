@@ -1,20 +1,47 @@
+import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
-const meuCarro: Carro = {
-    marca: "Toyota",
-    modelo: "Corolla",
-    ano: 2022,
-    portas: 4,
-    acelerar: () => "O carro está acelerando!"
+
+// Criando gerenciadores
+const gerenciadorCarros = new GerenciadorVeiculos<Carro>();
+const gerenciadorMotos = new GerenciadorVeiculos<Moto>();
+
+// Criando veículos
+const carro1: Carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2023,
+  portas: 4,
+  acelerar: () => "O carro está acelerando!"
 };
-const minhaMoto: Moto = {
-    marca: "Honda",
-    modelo: "CB 500",
-    ano: 2021,
-    cilindradas: 500,
-    acelerar: () => "A moto está acelerando!"
+
+const carro2: Carro = {
+  marca: "Honda",
+  modelo: "Civic",
+  ano: 2022,
+  portas: 4,
+  acelerar: () => "O carro está acelerando!"
 };
-console.log("Carro:", meuCarro);
-console.log(meuCarro.acelerar());
-console.log("Moto:", minhaMoto);
-console.log(minhaMoto.acelerar());
+
+const moto1: Moto = {
+  marca: "Yamaha",
+  modelo: "MT-07",
+  ano: 2022,
+  cilindradas: 689,
+  acelerar: () => "A moto está acelerando!"
+};
+
+// Adicionando veículos
+gerenciadorCarros.adicionar(carro1);
+gerenciadorCarros.adicionar(carro2);
+gerenciadorMotos.adicionar(moto1);
+
+// Listando veículos
+gerenciadorCarros.listarVeiculos();
+gerenciadorMotos.listarVeiculos();
+
+// Removendo um veículo
+gerenciadorCarros.remover(carro1);
+
+// Listando novamente após remoção
+gerenciadorCarros.listarVeiculos();
