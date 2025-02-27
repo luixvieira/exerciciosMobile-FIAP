@@ -4,6 +4,7 @@ import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import { Veiculo } from "./interface/Veiculo";
 import { filtrarPorAno, filtrarPorMarca } from "./utils/FiltroVeiculos";
+import { gerarRelatorio } from "./utils/RelatorioVeiculos";
 
 // Criando gerenciadores
 const gerenciadorCarros = new GerenciadorVeiculos<Carro>();
@@ -91,3 +92,16 @@ console.log(veiculos2023);
 const veiculosHonda = filtrarPorMarca(veiculos, "Honda");
 console.log("Veículos da marca Honda:");
 console.log(veiculosHonda);
+
+// Criando lista de veículos
+const listaveiculos: Veiculo[] = [
+  { marca: "Toyota", modelo: "Corolla", ano: 2023, acelerar: () => "Acelerando o Corolla!" },
+  { marca: "Honda", modelo: "Civic", ano: 2022, acelerar: () => "Acelerando o Civic!" },
+  { marca: "Yamaha", modelo: "MT-07", ano: 2022, acelerar: () => "Acelerando a MT-07!" },
+  { marca: "Toyota", modelo: "Hilux", ano: 2021, acelerar: () => "Acelerando a Hilux!" },
+  { marca: "Honda", modelo: "Fit", ano: 2023, acelerar: () => "Acelerando o Fit!" }
+];
+
+// Gerando e exibindo o relatório
+const relatorio = gerarRelatorio(listaveiculos);
+console.log(relatorio);
