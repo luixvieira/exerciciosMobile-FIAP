@@ -1,3 +1,4 @@
+import { EstoqueVeiculos } from "./classes/EstoqueVeiculo";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
@@ -45,3 +46,27 @@ gerenciadorCarros.remover(carro1);
 
 // Listando novamente após remoção
 gerenciadorCarros.listarVeiculos();
+
+// Criando um estoque para carros e motos
+const estoqueCarros = new EstoqueVeiculos();
+const estoqueMotos = new EstoqueVeiculos();
+
+// Adicionando veículos ao estoque
+estoqueCarros.adicionarEstoque("Corolla", 5);
+estoqueCarros.adicionarEstoque("Civic", 3);
+estoqueMotos.adicionarEstoque("MT-07", 2);
+estoqueMotos.adicionarEstoque("CB 500X", 4);
+
+// Consultando estoque
+estoqueCarros.consultarEstoque("Corolla");
+estoqueCarros.consultarEstoque("Civic");
+estoqueMotos.consultarEstoque("MT-07");
+estoqueMotos.consultarEstoque("CB 500X");
+
+// Removendo um veículo do estoque
+estoqueCarros.removerEstoque("Civic");
+estoqueMotos.removerEstoque("MT-07");
+
+// Consultando estoque novamente após remoção
+estoqueCarros.consultarEstoque("Civic");
+estoqueMotos.consultarEstoque("MT-07");
