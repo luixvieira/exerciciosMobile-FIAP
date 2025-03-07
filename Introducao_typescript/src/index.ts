@@ -13,3 +13,10 @@ const soma = (numeros: number[]): number => {
 
 // Print
 console.log(`A soma dos valores é: ${soma(numeros)}`);
+
+//Exercicio 2
+
+function mensagemPersonalizada(nome: string): string {
+    return `Olá, ${nome}! Bem-vindo(a) ao TypeScript.`;
+}
+console.log(mensagemPersonalizada("Ana"));
