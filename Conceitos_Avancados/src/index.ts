@@ -34,3 +34,17 @@ repositorio.salvar(usuario2);
 // Obtendo e exibindo todos os usuários salvos
 console.log("Lista de usuários cadastrados:");
 console.log(repositorio.obterTodos());
+
+
+// src/index.ts
+import { processarResposta } from "./utils/processarResposta";
+import { RespostaServidor } from "./types/RespostaServidor";
+
+// Testando a função com diferentes tipos de resposta
+const resposta1: RespostaServidor = "Operação concluída com sucesso!";
+const resposta2: RespostaServidor = true;
+const resposta3: RespostaServidor = false;
+
+processarResposta(resposta1);
+processarResposta(resposta2);
+processarResposta(resposta3);
