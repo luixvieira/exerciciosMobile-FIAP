@@ -17,3 +17,20 @@ const palavras = ["TypeScript", "é", "bem", "desafiador"];
 const palavrasInvertidas = inverterArray(palavras);
 console.log("Array original de strings:", palavras);
 console.log("Array invertido de strings:", palavrasInvertidas);
+
+
+import { RepositorioUsuarios, Usuario } from "./classes/RepositorioUsuarios";
+
+// Criando uma instância do repositório
+const repositorio = new RepositorioUsuarios();
+
+// Criando e salvando usuários
+const usuario1: Usuario = { nome: "João Silva", email: "joao@email.com" };
+const usuario2: Usuario = { nome: "Maria Oliveira", email: "maria@email.com" };
+
+repositorio.salvar(usuario1);
+repositorio.salvar(usuario2);
+
+// Obtendo e exibindo todos os usuários salvos
+console.log("Lista de usuários cadastrados:");
+console.log(repositorio.obterTodos());
