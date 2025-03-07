@@ -48,3 +48,22 @@ const resposta3: RespostaServidor = false;
 processarResposta(resposta1);
 processarResposta(resposta2);
 processarResposta(resposta3);
+
+
+
+import { EstudanteTrabalhador } from "./types/EstudanteTrabalhador";
+
+// Criando um objeto do tipo EstudanteTrabalhador
+const estudanteTrabalhador: EstudanteTrabalhador = {
+    nome: "Carlos Mendes",
+    curso: "Engenharia de Software",
+    empresa: "Tech Solutions",
+    cargo: "Desenvolvedor Júnior"
+};
+
+// Exibindo os dados no console
+console.log("Dados do Estudante Trabalhador:");
+console.log(`Nome: ${estudanteTrabalhador.nome}`);
+console.log(`Curso: ${estudanteTrabalhador.curso}`);
+console.log(`Empresa: ${estudanteTrabalhador.empresa}`);
+console.log(`Cargo: ${estudanteTrabalhador.cargo}`);
